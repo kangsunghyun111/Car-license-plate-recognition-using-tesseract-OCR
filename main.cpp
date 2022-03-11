@@ -19,7 +19,7 @@ char* UTF8ToANSI(const char* pszCode);  // To prevent korean language broken
 
 int main()
 {
-    imageProcessing("carImage/9.jpg");
+    imageProcessing("carImage/8.jpg");
     printCarNumber();
 
     //for (int i = 1; i < 11; i++) {    // All images in carImage will be processed
@@ -136,7 +136,7 @@ void imageProcessing(string input) {
             }
 
             gradient = delta_y / delta_x;  //  Get gradient.
-            cout << gradient << endl;
+            //cout << gradient << endl;
 
             if (gradient < 0.25) {  //  Can eat friends only on straight line.
                 count += 1;
@@ -177,8 +177,7 @@ void imageProcessing(string input) {
             delta_y = 1;
         }
 
-        gradient = delta_y / delta_x;  //  Get gradient.
-        cout << gradient << endl;
+        gradient = delta_y / delta_x;  // Get gradient
 
         if (gradient < 0.25) {  
             select = i;
@@ -217,21 +216,17 @@ void imageProcessing(string input) {
     warpAffine(cropped_image, cropped_image, rotation_matrix, Size(original_width, original_height));
     imshow("Rotated", cropped_image);
 
+
     getRectSubPix(image, Size(plate_width, plate_height), Point(plate_center_x, plate_center_y), cropped_image, -1);
     //imshow("Cropped", cropped_image);
-
     cvtColor(cropped_image, cropped_image, COLOR_BGR2GRAY);
     //imshow("CroppedGray", cropped_image);
-
     GaussianBlur(cropped_image, cropped_image, Size(5, 5), 0);
     //imshow("GausianBlur", cropped_image);
-
     adaptiveThreshold(cropped_image, cropped_image, 255, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY_INV, 19, 9);
     //imshow("Threshold", cropped_image);
-
     //threshold(cropped_image, cropped_image, 127, 255, 0);
     //imshow("Threshold", cropped_image);
-
     copyMakeBorder(cropped_image, cropped_image, 10, 10, 10, 10, BORDER_CONSTANT, Scalar(0, 0, 0)); // Padding for recognition rate
     //imshow("Padded", cropped_image);
 
