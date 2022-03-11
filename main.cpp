@@ -15,7 +15,7 @@ using namespace std;
 void imageProcessing(string input);     // Image processing to extract strings form car plates  
 void printCarNumber();                  // Print car number
 string getCarNumber(string text);       // Use regular expression to get car number
-char* UTF8ToANSI(const char* pszCode);  // To prevent korean broken
+char* UTF8ToANSI(const char* pszCode);  // To prevent korean language broken
 
 int main()
 {
@@ -242,7 +242,7 @@ void printCarNumber() {
     Mat image;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     
-    // Initialize tesseract-ocr with English, without specifying tessdata path
+    // Initialize tesseract-ocr with Korean, oem is 0
     if (api->Init("C:\\Program Files\\tesseract-OCR\\tessdata", "kor3",tesseract::OEM_TESSERACT_ONLY)) {
         fprintf(stderr, "Could not initialize tesseract.\n");
         exit(1);
