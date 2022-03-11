@@ -22,7 +22,7 @@ int main()
     imageProcessing("carImage/9.jpg");
     printCarNumber();
 
-    //for (int i = 1; i < 11; i++) {
+    //for (int i = 1; i < 11; i++) {    // All images in carImage will be processed
     //    char buf[256];
     //    sprintf_s(buf, "carImage/%d.jpg", i);
     //    imageProcessing(buf);
