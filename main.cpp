@@ -290,8 +290,7 @@ char* UTF8ToANSI(const char* pszCode) // For korean
     int     nLength;
 
     // Get nLength of the Wide Char buffer
-    nLength = MultiByteToWideChar(CP_UTF8, 0, pszCode, strlen(pszCode) + 1,
-        NULL, NULL);
+    nLength = MultiByteToWideChar(CP_UTF8, 0, pszCode, strlen(pszCode) + 1, NULL, NULL);
     bstrWide = SysAllocStringLen(NULL, nLength);
 
     // Change UTF-8 to Unicode (UTF-16)
