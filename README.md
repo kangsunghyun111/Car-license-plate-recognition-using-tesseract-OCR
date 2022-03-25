@@ -15,6 +15,9 @@ Tesseract-OCR 5.0.1
 ![8-1](https://user-images.githubusercontent.com/94694035/158774767-50f30856-839c-4bf7-aad8-ead73518f394.jpg)
 
 
+    Result
+![car number print](https://user-images.githubusercontent.com/94694035/160058691-8a12241d-2989-4b7a-af63-4114a41d2df9.PNG)
+
 
 Put the image you want to recognize in the carImage folder and change the factor of the imageProcessing function.
 
